@@ -1,3 +1,8 @@
+function updateBaseColor() {
+  const newColor = document.getElementById("base").value;
+  document.documentElement.style.setProperty("--base", newColor);
+}
+
 const spacingSlider = document.getElementById("spacing");
 const grayscaleSlider = document.getElementById("grayscale");
 
@@ -10,6 +15,9 @@ function updateGrayscale() {
   const grayscaleLevel = document.getElementById("grayscale").value + "%";
   document.documentElement.style.setProperty("--grayscale", grayscaleLevel);
 }
+
+const colorPicker = document.getElementById("base");
+colorPicker.addEventListener("change", updateBaseColor);
 
 spacingSlider.addEventListener("change", updateSpacing);
 spacingSlider.addEventListener("mousemove", updateSpacing);
