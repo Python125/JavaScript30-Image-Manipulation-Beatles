@@ -1,10 +1,10 @@
+const spacingSlider = document.getElementById("spacing");
+const grayscaleSlider = document.getElementById("grayscale");
+
 function updateBaseColor() {
   const newColor = document.getElementById("base").value;
   document.documentElement.style.setProperty("--base", newColor);
 }
-
-const spacingSlider = document.getElementById("spacing");
-const grayscaleSlider = document.getElementById("grayscale");
 
 function updateSpacing() {
   const spacingValue = document.getElementById("spacing").value + "px";
@@ -24,3 +24,14 @@ spacingSlider.addEventListener("mousemove", updateSpacing);
 
 grayscaleSlider.addEventListener("change", updateGrayscale);
 grayscaleSlider.addEventListener("mousemove", updateGrayscale);
+
+// const inputs = document.querySelectorAll(".controls input");
+// function handleUpdate() {
+//   const suffix = this.dataset.sizing || "";
+//   document.documentElement.style.setProperty(
+//     `--${this.name}`,
+//     this.value + suffix
+//   );
+// }
+// inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+// inputs.forEach((input) => input.addEventListener("mousemove", handleUpdate));
