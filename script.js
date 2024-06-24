@@ -1,12 +1,18 @@
-const inputs = document.querySelectorAll(".controls input");
+const spacingSlider = document.getElementById("spacing");
+const grayscaleSlider = document.getElementById("grayscale");
 
-function handleUpdate() {
-  const suffix = this.dataset.sizing || "";
-  document.documentElement.style.setProperty(
-    `--${this.name}`,
-    this.value + suffix
-  );
+function updateSpacing() {
+  const spacingValue = document.getElementById("spacing").value + "px";
+  document.documentElement.style.setProperty("--spacing", spacingValue);
 }
 
-inputs.forEach((input) => input.addEventListener("change", handleUpdate));
-inputs.forEach((input) => input.addEventListener("mousemove", handleUpdate));
+function updateGrayscale() {
+  const grayscaleLevel = document.getElementById("grayscale").value + "%";
+  document.documentElement.style.setProperty("--grayscale", grayscaleLevel);
+}
+
+spacingSlider.addEventListener("change", updateSpacing);
+spacingSlider.addEventListener("mousemove", updateSpacing);
+
+grayscaleSlider.addEventListener("change", updateGrayscale);
+grayscaleSlider.addEventListener("mousemove", updateGrayscale);
